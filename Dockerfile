@@ -2,4 +2,6 @@ FROM voorloop/decouphage:latest
 ENV TZ=Europe/Copenhagen
 ENV DEBIAN_FRONTEND=noninteractive
 
-CMD python pipeline.py
+COPY pipeline.py /data/pipeline.py
+
+CMD python /data/pipeline.py
