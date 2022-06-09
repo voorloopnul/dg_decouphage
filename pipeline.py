@@ -10,4 +10,5 @@ os.system(f"python3 decouphage.py input_file")
 os.system('pwd')
 os.system("ls")
 with open('output.gbk', 'rb') as data:
-    requests.put(url, data=data)
+    r = requests.put(os.getenv("DOCKGRID_RESULT_URL"), data=data)
+    print(r.status_code)
