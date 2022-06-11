@@ -13,3 +13,4 @@ os.system("tar -zcvf output.tar.gz output")
 with open('output.tar.gz', 'rb') as data:
     r = requests.put(os.getenv("DOCKGRID_RESULT_URL"), data=data)
     print(r.status_code)
+    print(r.status_code)
