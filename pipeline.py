@@ -1,6 +1,7 @@
 import base64
 import os
 import sys
+from subprocess import run
 
 import requests as requests
 
@@ -10,8 +11,8 @@ cmd = " ".join(sys.argv[2:])
 ret = os.system(f'wget "{url}" -O input_file')
 print(ret)
 
-ret = os.system(f"python3 decouphage.py --tmp_dir output --output output/output.gbk {cmd} input_file")
-print(ret)
+decouphage = run(f"python3 decouphage.py --tmp_dir output --output output/output.gbk {cmd} input_file")
+print(decouphage.returncode)
 
 ret = os.system('pwd')
 print(ret)
